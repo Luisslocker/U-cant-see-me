@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+  <title>8-Bit Ring Rumble</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="topbar">
+    <div class="brand">
+      <span class="chip">LL</span>
+      <div>
+        <div class="t1">8-BIT RING RUMBLE</div>
+        <div class="t2">Arcade wrestling mini-game</div>
+      </div>
+    </div>
+
+    <div class="hud">
+      <div class="pill">Score: <span id="score">0</span></div>
+      <div class="pill">Round: <span id="round">1</span></div>
+      <div class="pill">HP: <span id="hp">100</span> / <span id="ehp">100</span></div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <canvas id="game" width="900" height="540"></canvas>
+
+    <div class="panel">
+      <div class="panelTitle">Controls</div>
+      <ul>
+        <li><b>Move:</b> Arrow keys / WASD</li>
+        <li><b>Punch:</b> Z</li>
+        <li><b>Kick:</b> X</li>
+        <li><b>Taunt:</b> C (briefly dodges)</li>
+        <li><b>Special:</b> Space (when meter full)</li>
+      </ul>
+
+      <div class="row">
+        <button id="startBtn">Start / Restart</button>
+        <button id="muteBtn">Sound: ON</button>
+      </div>
+
+      <div class="row">
+        <label class="lbl">Optional splash image URL</label>
+        <input id="splashUrl" placeholder="Paste an image URL (only if you own rights)" />
+        <button id="setSplashBtn">Set Splash</button>
+      </div>
+
+      <div class="tiny">
+        Tip: Works great embedded on Shopify with an iframe.
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile controls -->
+  <div class="mobile">
+    <div class="dpad">
+      <button data-k="up">▲</button>
+      <div>
+        <button data-k="left">◀</button>
+        <button data-k="down">▼</button>
+        <button data-k="right">▶</button>
+      </div>
+    </div>
+    <div class="acts">
+      <button data-a="punch">PUNCH</button>
+      <button data-a="kick">KICK</button>
+      <button data-a="taunt">TAUNT</button>
+      <button data-a="special">SPECIAL</button>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
